@@ -11,11 +11,11 @@ for report in reports:
         # if sorted(levels) != sorted(list(set(levels))):
         #     print(levels)
         #     continue
-
+        levels = list(map(int, levels))
         isReportSafe = True
         if sorted(levels) == levels:
             for i in range(1, len(levels)):
-                if 1 <= abs(int(levels[i]) - int(levels[i-1])) and  abs(int(levels[i]) - int(levels[i-1])) <= 3:
+                if 1 <= abs(int(levels[i]) - int(levels[i-1])) and abs(int(levels[i]) - int(levels[i-1])) <= 3:
                     pass
                 else:
                     isReportSafe = False
@@ -27,7 +27,7 @@ for report in reports:
         
         elif sorted(levels, reverse=True) == levels:
             for i in range(1, len(levels)):
-                if 1 <= abs(int(levels[i]) - int(levels[i-1])) and  abs(int(levels[i]) - int(levels[i-1])) <= 3:
+                if 1 <= abs(int(levels[i]) - int(levels[i-1])) and abs(int(levels[i]) - int(levels[i-1])) <= 3:
                     pass
                 else:
                     isReportSafe = False
