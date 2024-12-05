@@ -1,4 +1,4 @@
-with open('Day4/input2.txt') as f:
+with open('Day4/input.txt') as f:
     data = f.read()
 XMAS_count = 0
 d = []  # d is the data as a matrix
@@ -17,7 +17,7 @@ def look_forward(row, col):
     return 0
 
 def look_backward(row, col):
-    if col-3>0:
+    if col-3>=0:
         if d[row][col] +d[row][col-1] +d[row][col-2] +d[row][col-3] == 'XMAS':
             # print(d[row][col] +d[row][col+1] +d[row][col+2] +d[row][col+3])
             print(row,col,'look_backward')
@@ -33,7 +33,7 @@ def look_down(row, col):
     return 0
 
 def look_up(row, col):
-    if row-3>0:
+    if row-3>=0:
         if d[row][col] +d[row-1][col] +d[row-2][col] +d[row-3][col] == 'XMAS':
             # print(d[row][col] +d[row][col+1] +d[row][col+2] +d[row][col+3])
             print(row,col,'look_up')
@@ -48,21 +48,21 @@ def look_right_down_diagonal(row, col):
     return 0
 
 def look_right_up_diagonal(row, col):
-    if row-3>0 and col+3<LEN:
+    if row-3>=0 and col+3<LEN:
         if d[row][col] +d[row-1][col+1] +d[row-2][col+2] +d[row-3][col+3] == 'XMAS':
             print(row,col,'look_right_up_diagonal')
             return 1
     return 0
 
 def look_left_down_diagonal(row, col):
-    if row+3<LEN and col-3>0:
+    if row+3<LEN and col-3>=0:
         if d[row][col] +d[row+1][col-1] +d[row+2][col-2] +d[row+3][col-3] == 'XMAS':
             print(row,col,'look_left_down_diagonal')
             return 1
     return 0
 
 def look_left_up_diagonal(row, col):
-    if row-3>0 and col-3>0:
+    if row-3>=0 and col-3>=0:
         if d[row][col] +d[row-1][col-1] +d[row-2][col-2] +d[row-3][col-3] == 'XMAS':
             print(row,col,'look_left_up_diagonal')
             return 1
