@@ -4,8 +4,7 @@ import requests
 from mySession import cookie
 day = input('Enter the day whose input is to be fetched: ')
 url = f"https://adventofcode.com/2024/day/{day}/input"
-response = requests.get(url, 
-    cookies=cookie)
+response = requests.get(url, cookies=cookie)
 
 if response.status_code == 200:
     html_content = response.text
@@ -14,6 +13,8 @@ else:
     print(response.status_code)
 if not os.path.isdir(f'Day{day}'):
     os.mkdir(f'Day{day}')
+    open(f'Day{day}/Problem1.py', 'w')
+    open(f'Day{day}/Problem2.py', 'w')
     with open(f'Day{day}/input.txt', 'w') as f:
         f.write(data)
         print(f'input.txt is added to Day{day}')
