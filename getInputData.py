@@ -1,5 +1,5 @@
-# Run this to get the input for the day into a file
-
+# Run this to get the input for the day into the correct day's directory
+import os
 import requests
 from mySession import cookie
 day = input('Enter the day whose input is to be fetched: ')
@@ -12,7 +12,10 @@ if response.status_code == 200:
     data = html_content
 else:
     print(response.status_code)
-
-with open('input.txt', 'w') as f:
-    f.write(data)
-    print(f'input.txt is overwritten with {day}\'s input data')
+if not os.path.isdir(f'Day{day}'):
+    os.mkdir(f'Day{day}')
+    with open(f'Day{day}/input.txt', 'w') as f:
+        f.write(data)
+        print(f'input.txt is added to Day{day}')
+else:
+    print('File aldready exists')

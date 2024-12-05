@@ -8,12 +8,6 @@ for i in data.split('\n'):
 LEN = len(d)    
 print('LEN:', LEN)
 
-
-
-
-
-
-
 for row in range(len(d)):
     for col in range(len(d[row])):
         # print(row,col)
