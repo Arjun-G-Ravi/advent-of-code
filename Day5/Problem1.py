@@ -24,16 +24,17 @@ for r in data2:
     if r:
         row = r.split(',')
         row = list(map(int, row))
-        # print(row)
+        print(row, color='purple')
         for i in range(len(row)):
             print('Element:', row[i], color='g')
             if row[i] in hmap and max([hmap[row[i]][j] in row for j in range(len(hmap[row[i]]))]):
-                print(row[i])
+                # print(row[i])
                 # print(list(hmap[row[i]][j] in row[:i] for j in range(len(hmap[row[i]]))))
                 # if not max(hmap[row[i]][j] in row[:i] for j in range(len(hmap[row[i]]))): pass
-                for j in range(len(hmap[row[i]])):
+                print(hmap[row[i]], color='y')
+                for j in range(i):
                     print(j)
-                    if hmap[row[i]][j] in row[:i]:
+                    if row[i] not in hmap[row[i]] and row[i] in :
                         print('cow', color='r')
                         print(row, color='r')
                 
